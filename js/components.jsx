@@ -703,7 +703,7 @@ function SocialBanner3({ lang }) {
           <div className="sbanner3-track">
             {[...providers, ...providers].map((p, i) => (
               <div key={i} className="sbanner3-logo-pill">
-                <div className="sbanner3-logo-dot" style={{background:p.color}}>{p.initial}</div>
+                <div className="sbanner3-logo-dot" style={{background:p.logo?'transparent':p.color}}>{p.logo?<img src={p.logo} alt={p.name} style={{width:'100%',height:'100%',objectFit:'contain',borderRadius:7}} onError={e=>{e.target.style.display='none'}} />:p.initial}</div>
                 <span>{p.name}</span>
               </div>
             ))}
@@ -998,7 +998,7 @@ function LiveCalc3({ lang, currency, dark }) {
                            itemScope itemType="https://schema.org/FinancialProduct">
                     {isBest && <div className="rc3-ai"><Ico name="sparkle" size={13} color="#0a0e1a" /> {r.aiBest}</div>}
                     <div className="rc3-top">
-                      <div className="rc3-logo" style={{background:o.color}} aria-hidden="true">{o.initial}</div>
+                      <div className="rc3-logo" style={{background:o.logo?'transparent':o.color}} aria-hidden="true">{o.logo?<img src={o.logo} alt={o.name} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={e=>{e.target.style.display='none'}} />:o.initial}</div>
                       <div className="rc3-info">
                         <h3 className="rc3-name" itemProp="name">{o.name}</h3>
                         <div className="rc3-type"><Ico name={o.type==='bank'?'bank':o.type==='p2p'?'users':'building'} size={12} /> {o.type==='bank'?'Banka':o.type==='p2p'?'P2P':(lang==='cs'?'Nebankovni':'Nebankovy')}</div>
@@ -1091,7 +1091,7 @@ function Detail3({ lang, currency, offer, onBack, onApply }) {
         <article className="d3-card" itemScope itemType="https://schema.org/FinancialProduct">
           {/* Header */}
           <div className="d3-head">
-            <div className="rc3-logo" style={{background:offer.color,width:56,height:56,fontSize:20}}>{offer.initial}</div>
+            <div className="rc3-logo" style={{background:offer.logo?'transparent':offer.color,width:56,height:56,fontSize:20}}>{offer.logo?<img src={offer.logo} alt={offer.name} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={e=>{e.target.style.display='none'}} />:offer.initial}</div>
             <div style={{flex:1}}>
               <h2 className="d3-name" itemProp="name">{offer.name}</h2>
               <div className="rc3-type"><Ico name={offer.type==='bank'?'bank':offer.type==='p2p'?'users':'building'} size={13}/> {offer.type==='bank'?'Banka':offer.type==='p2p'?'P2P':'Nebankovni'}</div>
@@ -1241,7 +1241,7 @@ function AppForm3({ lang, currency, offer, onBack }) {
       <Crumbs items={[{label:L[lang].breadcrumbs.home,onClick:onBack},{label:L[lang].breadcrumbs.compare,onClick:onBack},{label:L[lang].breadcrumbs.apply}]}/>
       <div className="d3-card">
         <h2 style={{fontSize:22,fontWeight:700,textAlign:'center',marginBottom:8}}>{t.title}</h2>
-        <div className="af3-mini"><div className="rc3-logo" style={{background:offer.color,width:32,height:32,fontSize:12}}>{offer.initial}</div><strong>{offer.name}</strong><span style={{color:'var(--c3-muted)'}}>{fmt(offer.monthly,isEUR)}/{L[lang].calc.mo}</span></div>
+        <div className="af3-mini"><div className="rc3-logo" style={{background:offer.logo?'transparent':offer.color,width:32,height:32,fontSize:12}}>{offer.logo?<img src={offer.logo} alt={offer.name} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={e=>{e.target.style.display='none'}} />:offer.initial}</div><strong>{offer.name}</strong><span style={{color:'var(--c3-muted)'}}>{fmt(offer.monthly,isEUR)}/{L[lang].calc.mo}</span></div>
         <div className="af3-fields">
           {[[t.name,'name','text','Jan Novak'],[t.email,'email','email','jan@email.cz'],[t.phone,'phone','tel','+420 123 456 789'],[t.income,'income','number',isEUR?'2000':'45000'],[t.expenses,'expenses','number',isEUR?'800':'20000']].map(([lb,k,tp,ph])=>(
             <div key={k} className="af3-field"><label>{lb}</label><input type={tp} value={form[k]} onChange={e=>up(k,e.target.value)} placeholder={ph}/></div>
@@ -1783,7 +1783,7 @@ function AiPage3({ lang, onNav }) {
               <div className="aip3-top-card">
                 <div className="aip3-top-badge"><Ico name="sparkle" size={14} color="#0a0e1a" /> {cs ? 'Doporuceni pro vas' : 'Odporucenie pre vas'}</div>
                 <div className="aip3-top-head">
-                  <div className="rc3-logo" style={{background:result.top.color,width:52,height:52,fontSize:18}}>{result.top.initial}</div>
+                  <div className="rc3-logo" style={{background:result.top.logo?'transparent':result.top.color,width:52,height:52,fontSize:18}}>{result.top.logo?<img src={result.top.logo} alt={result.top.name} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={e=>{e.target.style.display='none'}} />:result.top.initial}</div>
                   <div style={{flex:1}}>
                     <h2 className="aip3-top-name">{result.top.name}</h2>
                     <div className="rc3-type"><Ico name={result.top.type==='bank'?'bank':'building'} size={12} /> {result.top.type==='bank'?'Banka':'Nebankovni'}</div>
@@ -1847,7 +1847,7 @@ function AiPage3({ lang, onNav }) {
                 <div className="aip3-runner">
                   <h3 className="d3-section-title">{cs ? 'Alternativa' : 'Alternativa'}</h3>
                   <div className="fi3-rank-card" onClick={() => onNav('compare')}>
-                    <div className="rc3-logo" style={{background:result.runner.color,width:38,height:38,fontSize:13}}>{result.runner.initial}</div>
+                    <div className="rc3-logo" style={{background:result.runner.logo?'transparent':result.runner.color,width:38,height:38,fontSize:13}}>{result.runner.logo?<img src={result.runner.logo} alt={result.runner.name} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={e=>{e.target.style.display='none'}} />:result.runner.initial}</div>
                     <div className="fi3-rank-info"><div className="fi3-rank-name">{result.runner.name}</div><div className="rc3-type"><Ico name={result.runner.type==='bank'?'bank':'building'} size={11} /> {result.runner.type==='bank'?'Banka':'Nebankovni'}</div></div>
                     <div style={{textAlign:'right'}}><div className="rc3-gv" style={{fontSize:15}}>{fmt(result.runner.monthly,isEUR)}/{cs?'mes':'mes'}</div><div className="rc3-gl">RPSN {result.runner.rpsn}%</div></div>
                   </div>
@@ -1986,7 +1986,7 @@ function FairnessIndex3({ lang, onNav }) {
           ]} />
           <div className="d3-card">
             <div className="d3-head">
-              <div className="rc3-logo" style={{background:selectedProv.color,width:52,height:52,fontSize:18}}>{selectedProv.initial}</div>
+              <div className="rc3-logo" style={{background:selectedProv.logo?'transparent':selectedProv.color,width:52,height:52,fontSize:18}}>{selectedProv.logo?<img src={selectedProv.logo} alt={selectedProv.name} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={e=>{e.target.style.display='none'}} />:selectedProv.initial}</div>
               <div style={{flex:1}}><h2 className="d3-name">{selectedProv.name}</h2><div className="rc3-type"><Ico name={selectedProv.type==='bank'?'bank':'building'} size={13}/> {selectedProv.type==='bank'?'Banka':'Nebankovni'}</div></div>
               <div className="d3-score"><span className="d3-sn">{selectedProv.fairness}</span><span className="d3-so">/10</span></div>
             </div>
@@ -2070,7 +2070,7 @@ function FairnessIndex3({ lang, onNav }) {
               <Reveal key={prov.id} delay={i * 40}>
                 <div className="fi3-rank-card" onClick={() => setSelectedProv(prov)}>
                   <div className="fi3-rank-pos">{i + 1}</div>
-                  <div className="rc3-logo" style={{background:prov.color,width:38,height:38,fontSize:13}}>{prov.initial}</div>
+                  <div className="rc3-logo" style={{background:prov.logo?'transparent':prov.color,width:38,height:38,fontSize:13}}>{prov.logo?<img src={prov.logo} alt={prov.name} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={e=>{e.target.style.display='none'}} />:prov.initial}</div>
                   <div className="fi3-rank-info">
                     <div className="fi3-rank-name">{prov.name}</div>
                     <div className="rc3-type" style={{marginTop:2}}><Ico name={prov.type==='bank'?'bank':prov.type==='p2p'?'users':'building'} size={11}/> {prov.type==='bank'?'Banka':prov.type==='p2p'?'P2P':'Nebankovni'}</div>
@@ -2342,7 +2342,7 @@ function ProvidersListing3({ lang, onNav }) {
             return (
               <div key={p.id} className="provs3-card" style={{animationDelay:i*0.05+'s'}} onClick={() => onNav('provider:'+p.id)}>
                 <div className="provs3-card-top">
-                  <div className="rc3-logo" style={{background:p.color,width:48,height:48,fontSize:16}}>{p.initial}</div>
+                  <div className="rc3-logo" style={{background:p.logo?'transparent':p.color,width:48,height:48,fontSize:16}}>{p.logo?<img src={p.logo} alt={p.name} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={e=>{e.target.style.display='none'}} />:p.initial}</div>
                   <div style={{flex:1,minWidth:0}}>
                     <div className="provs3-name">{p.name}</div>
                     <div className="rc3-type"><Ico name={p.type==='bank'?'bank':p.type==='p2p'?'users':'building'} size={12}/> {p.type==='bank'?'Banka':p.type==='p2p'?'P2P':(cs?'Nebankovni':'Nebankovy')}</div>
@@ -2398,7 +2398,7 @@ function ProviderProfile3({ lang, providerId, onNav }) {
         {/* Hero */}
         <div className="provp3-hero">
           <div className="provp3-hero-top">
-            <div className="rc3-logo" style={{background:p.color,width:64,height:64,fontSize:22}}>{p.initial}</div>
+            <div className="rc3-logo" style={{background:p.logo?'transparent':p.color,width:64,height:64,fontSize:22}}>{p.logo?<img src={p.logo} alt={p.name} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={e=>{e.target.style.display='none'}} />:p.initial}</div>
             <div style={{flex:1}}>
               <h1 className="provp3-h1" itemProp="name">{p.name}</h1>
               <div className="provp3-fullname" itemProp="legalName">{prof.fullName}</div>
@@ -2794,7 +2794,7 @@ function CategoryPage3({ lang, catId, onNav }) {
                        itemScope itemType="https://schema.org/FinancialProduct">
                 {i === 0 && <div className="rc3-ai"><Ico name="sparkle" size={13} color="#0a0e1a" /> {cs?'Nejlepsi volba':'Najlepsia volba'}</div>}
                 <div className="rc3-top">
-                  <div className="rc3-logo" style={{background:o.color}} aria-hidden="true">{o.initial}</div>
+                  <div className="rc3-logo" style={{background:o.logo?'transparent':o.color}} aria-hidden="true">{o.logo?<img src={o.logo} alt={o.name} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={e=>{e.target.style.display='none'}} />:o.initial}</div>
                   <div className="rc3-info">
                     <h3 className="rc3-name" itemProp="name">{o.name}</h3>
                     <div className="rc3-type"><Ico name={o.type==='bank'?'bank':o.type==='p2p'?'users':'building'} size={12} /> {o.type==='bank'?'Banka':o.type==='p2p'?'P2P':(cs?'Nebankovni':'Nebankovy')}</div>
