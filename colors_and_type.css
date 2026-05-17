@@ -1,0 +1,164 @@
+/* ═══════════════════════════════════════════════════════════════════
+   StreamFix Design System — colors & typography
+   Source of truth: app/main.css :root in the streamfix repo.
+   Loaded by every preview card and every UI-kit HTML.
+   ═══════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ─── BASE SURFACES ─── */
+  --c-bg:      #ffffff;
+  --c-bg2:     #f7f8fa;
+  --c-bg3:     #f0f2f5;
+  --c-white:   #ffffff;
+  --c-hover:   #f3f4f9;
+  --c-hover2:  #ebebf8;
+  --c-logo-bg: #e9eaef;
+  --c-border:  #e4e7ed;
+  --c-border2: #d0d5de;
+  --c-black:   #000000;
+
+  /* ─── TEXT ─── */
+  --c-text:  #111827;
+  --c-muted: #6b7280;
+  --c-dim:   #6b7280;
+
+  /* ─── BRAND ACCENT (indigo) ─── */
+  --c-accent:       #5b51f8;
+  --c-accent2:      #7c6fe0;
+  --c-accent-hover: #4338d4;
+  --c-accent-deep:  #4a42e0;
+  --c-asoft:        #ede9ff;
+  --c-atext:        #4338ca;
+  --c-accent-rgb:   91, 81, 248;
+  --c-accent-dark:  #a78bfa;
+
+  /* ─── SECONDARY / CALLOUT COLORS ─── */
+  --c-green:  #16a34a;
+  --c-gsoft:  #dcfce7;
+  --c-red:    #dc2626;
+  --c-rsoft:  #fee2e2;
+  --c-amber:  #d97706;
+  --c-amsoft: #fef3c7;
+  --c-sky:    #44c6fc;
+  --c-nord:   #2563eb;
+  --c-nordsoft: #eff6ff;
+
+  /* ─── STATUS (ok / partial / blocked) ─── */
+  --c-ok-bg:      #f0fdf4; --c-ok-bg2: #dcfce7; --c-ok-bg3: #bbf7d0; --c-ok-text: #15803d;
+  --c-partial-bg:   #fffbeb; --c-partial-bg2: #fef3c7; --c-partial-bg3: #fde68a; --c-partial-text: #92400e;
+  --c-blocked-bg:   #fef2f2; --c-blocked-bg2: #fee2e2; --c-blocked-bg3: #fecaca; --c-blocked-text: #b91c1c;
+
+  /* ─── DARK SECTION (sparingly used) ─── */
+  --c-dark:              #0A0F1E;
+  --text-on-dark:        rgba(255,255,255,0.85);
+  --text-on-dark-muted:  rgba(255,255,255,0.55);
+  --text-on-dark-dim:    rgba(255,255,255,0.35);
+  --border-on-dark:      rgba(255,255,255,0.08);
+  --border-on-dark-lg:   rgba(255,255,255,0.35);
+
+  /* ─── CATEGORICAL PALETTE (14 hues for platform type dots) ─── */
+  --cat-svod:       #4f46e5;  --cat-avod:       #059669;
+  --cat-tvod:       #d97706;  --cat-fast:       #0891b2;
+  --cat-bvod:       #2563eb;  --cat-hvod:       #7c3aed;
+  --cat-vmvpd:      #64748b;  --cat-iptv:       #0d9488;
+  --cat-public:     #65a30d;  --cat-sport:      #dc2626;
+  --cat-niche:      #c026d3;  --cat-aggregator: #78716c;
+  --cat-ppv:        #db2777;  --cat-live:       #ea580c;
+
+  /* ─── UTILITY ACCENTS ─── */
+  --c-star:       #F59E0B;
+  --c-star-empty: #dddddd;
+  --c-trustpilot: #00b67a;
+
+  /* ═══ TYPOGRAPHY ═══ */
+  --f-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono:    'DM Mono', ui-monospace, monospace;
+
+  /* Size scale (pixel tokens) */
+  --fs-2xs: 10px;  --fs-xs:  12px;  --fs-sm:  14px;
+  --fs-base: 16px; --fs-md:  18px;  --fs-xl:  20px;
+  --fs-2xl: 22px;  --fs-3xl: 24px;  --fs-4xl: 28px;
+  --fs-5xl: 30px;  --fs-6xl: 40px;  --fs-7xl: 52px;
+
+  /* Fluid heading scales */
+  --fs-h1:    clamp(38px, 7vw,   72px);
+  --fs-h1-sm: clamp(24px, 4vw,   40px);
+  --fs-h2:    clamp(22px, 3.5vw, 36px);
+  --fs-h3:    clamp(18px, 2.5vw, 24px);
+
+  --fw-regular: 400; --fw-medium: 500; --fw-bold: 700;
+
+  --lh-none: 1;     --lh-tight:   1.1;  --lh-snug:    1.2;
+  --lh-normal: 1.4; --lh-relaxed: 1.6;  --lh-loose:   1.75;
+
+  --ls-tight: -0.02em; --ls-normal: 0; --ls-wide: 0.06em; --ls-wider: 0.1em;
+
+  /* ─── RADII ─── */
+  --r-sm:  8px;  --r-md:  12px; --r-lg:  16px;
+  --r-xl:  20px; --r-2xl: 28px; --r-full: 999px;
+
+  /* ─── SHADOWS ─── */
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:   0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg:   0 16px 48px rgba(0,0,0,0.14);
+  --shadow-blue: 0 8px 28px rgba(91,81,247,0.3);
+  --shadow-accent-sm: rgba(91,81,247,0.25);
+  --shadow-accent-md: rgba(91,81,247,0.35);
+
+  /* ─── Z-INDEX ─── */
+  --z-base: 2; --z-nav: 200; --z-sticky: 250; --z-overlay: 300;
+  --z-dropdown: 400; --z-modal: 800; --z-skip: 9999;
+
+  /* ─── TRANSITIONS ─── */
+  --t-fast: 0.12s; --t-base: 0.15s; --t-smooth: 0.2s; --t-slow: 0.3s;
+
+  /* ─── OVERLAYS ─── */
+  --overlay-nav:   rgba(255,255,255,0.97);
+  --overlay-dark:  rgba(0,0,0,0.45);
+  --overlay-modal: rgba(0,0,0,0.68);
+}
+
+/* ═══ SEMANTIC ELEMENT STYLES ═══ */
+
+html, body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--f-display);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-relaxed);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-family: var(--f-display);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--c-text);
+}
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-bold); line-height: var(--lh-snug); letter-spacing: var(--ls-tight); }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-bold); line-height: var(--lh-snug); }
+h4 { font-size: var(--fs-md);  font-weight: var(--fw-bold); line-height: var(--lh-normal); }
+h5 { font-size: var(--fs-base);font-weight: var(--fw-bold); line-height: var(--lh-normal); }
+h6 { font-size: var(--fs-sm);  font-weight: var(--fw-bold); line-height: var(--lh-normal); }
+
+p     { font-size: var(--fs-base); line-height: var(--lh-relaxed); color: var(--c-muted); }
+small { font-size: var(--fs-xs);  color: var(--c-dim); }
+code, kbd, samp { font-family: var(--f-mono); font-size: 0.92em; }
+.hl { color: var(--c-accent); }
+
+/* Eyebrow / uppercase micro-label */
+.eyebrow-type {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-atext);
+}
+
+:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }

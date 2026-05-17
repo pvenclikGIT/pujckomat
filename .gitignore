@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editory
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (pokud bys někdy přidal build)
+node_modules/
+npm-debug.log*
+
+# Lokální dev server logy
+*.log
